@@ -8,9 +8,9 @@ module.exports = {
       email: { type: Sequelize.STRING, allowNull: false },
       password: { type: Sequelize.STRING, allowNull: false },
       image: { type: Sequelize.STRING, allowNull: false },
-      // timestamp: { type: Sequelize.DATE, allowNull: false },
+    }, {
+      timestamps: false,
     });
-
   },
 
   down: async (queryInterface, Sequelize) => {
