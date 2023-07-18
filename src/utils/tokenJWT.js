@@ -8,8 +8,19 @@ const tokenJWT = (user) => {
         expiresIn: '7d',
         algorithm: 'HS256',
     };
-    const token = jwt.sign(payload, JWT_SECRET, jwtConfig);
-    return token;
-    };
 
-module.exports = tokenJWT;
+    const encoded = jwt.sign(payload, JWT_SECRET, jwtConfig);
+
+    return encoded;
+};
+
+const decoded = (token) => {
+    const spliter = token.split(' ')[1];
+    const decodedToken = jwt.verify(spliter, JWT_SECRET);
+    return decodedToken;
+};
+
+module.exports = {
+    tokenJWT,
+    decoded,
+};

@@ -1,5 +1,5 @@
 const { User } = require('../models');
-const tokenJWT = require('../utils/tokenJWT');
+const { tokenJWT } = require('../utils/tokenJWT');
 
 const loginUser = async ({ email, password }) => {
     if (!email || !password) return { status: 400, message: 'Some required fields are missing' };
