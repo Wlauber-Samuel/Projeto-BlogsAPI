@@ -19,6 +19,8 @@ app.post('/user', validateUser, userController.createUser);
 
 app.get('/user', tokenValidation, userController.getAllUsers);
 
+app.get('/user/:id', tokenValidation, userController.getUserById);
+
 // É importante exportar a constante `app`,
 // para que possa ser utilizada pelo arquivo `src/server.js`
 module.exports = app;
