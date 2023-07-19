@@ -14,9 +14,7 @@ const getAllUsers = async (_req, res) => {
 const getUserById = async (req, res) => {
     const { id } = req.params;
     const result = await userService.getUserById(id);
-    console.log('result', result);
 
-    console.log(!undefined);
     if (result.message) {
         return res.status(404).json({ message: 'User does not exist' });
     }
