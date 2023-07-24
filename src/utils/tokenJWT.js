@@ -15,7 +15,7 @@ const tokenJWT = (user) => {
 };
 
 const decoded = (token) => {
-    const spliter = token.split(' ')[1];
+    const spliter = token.split(' ')[1] || token;
     const decodedToken = jwt.verify(spliter, JWT_SECRET);
     return decodedToken;
 };
