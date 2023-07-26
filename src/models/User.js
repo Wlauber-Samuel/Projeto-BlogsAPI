@@ -7,7 +7,6 @@ const SchemaUser = (sequelize, DataTypes) => {
     image: DataTypes.STRING,
   }, {
     timestamps: false,
-    tableName: 'users',
     underscored: true,
   });
 

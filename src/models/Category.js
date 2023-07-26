@@ -4,7 +4,6 @@ const schemaCategory = (sequelize, DataTypes) => {
         name: DataTypes.STRING,
     }, {
         timestamps: false,
-        tableName: 'categories',
         underscored: true,
     });
 
