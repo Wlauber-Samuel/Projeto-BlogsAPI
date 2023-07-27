@@ -8,11 +8,11 @@ const tokenValidation = async (req, res, next) => {
     try {
         const decodedToken = decoded(token);
         if (!decodedToken) return res.status(401).json({ message: 'Expired or invalid token' });
+        req.user = decodedToken;
+        next();
     } catch (error) {
         return res.status(401).json({ message: 'Expired or invalid token' });
     }
-
-    next();
 };
 
 module.exports = tokenValidation;
